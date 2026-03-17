@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liebres Hub PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b132b">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fa-solid fa-graduation-cap"></i> Liebres Hub</h1>
+            <p>Instituto Tecnológico de Ciudad Juárez</p>
+        </header>
+
+        <main>
+            <section class="news-section">
+                <section class="news-section">
+                <h2><i class="fa-regular fa-newspaper"></i> Noticias ITCJ</h2>
+                <div class="carousel">
+                    <a href="http://cdjuarez.tecnm.mx/blog/nota/1404/LIEBRES-CONMEMORAN-EL-DiA-INTERNACIONAL-DE-LA-MUJER-CON-JORNADA-DE-REFLEXIoN-Y-DIaLOGO" target="_blank" class="news-card">
+                        <img src="http://cdjuarez.tecnm.mx/img/img_notas/8m0313.jpg" alt="Día de la mujer">
+                        <div class="news-content">
+                            <h3>Jornada de Reflexión y Diálogo 8M</h3>
+                        </div>
+                    </a>
+
+                    <a href="http://cdjuarez.tecnm.mx/blog/nota/1403/RECURSO-FAM-2025-FORTALECE-LABORATORIOS-DEL-TecNM-–-ITCJ" target="_blank" class="news-card">
+                        <img src="http://cdjuarez.tecnm.mx/img/img_notas/FAM0313.jpg" alt="Laboratorios">
+                        <div class="news-content">
+                            <h3>Recurso FAM fortalece laboratorios ITCJ</h3>
+                        </div>
+                    </a>
+
+                    <a href="http://cdjuarez.tecnm.mx/blog/nota/1401/FORTALECE-TUS-HABILIDADES-SOCIOEMOCIONALES-Y-SUMA-CReDITOS-A-TU-FORMACIoN" target="_blank" class="news-card">
+                        <img src="http://cdjuarez.tecnm.mx/img/img_notas/habilidades0313.jpg" alt="Habilidades">
+                        <div class="news-content">
+                            <h3>Suma créditos con Habilidades Socioemocionales</h3>
+                        </div>
+                    </a>
+
+                    <a href="http://cdjuarez.tecnm.mx/blog/nota/1398/NUEVO-LIDERAZGO-FORTALECE-aREAS-ESTRATeGICAS-DEL-TecNM-ITCJ" target="_blank" class="news-card">
+                        <img src="http://cdjuarez.tecnm.mx/img/img_notas/Jefaturas20260310.jpg" alt="Liderazgo">
+                        <div class="news-content">
+                            <h3>Nuevo Liderazgo en Áreas Estratégicas</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            </section>
+
+            <section class="glass-card weather-card">
+                <div class="weather-header">
+                    <h2><i class="fa-solid fa-cloud-sun"></i> Clima Actual</h2>
+                </div>
+                <div id="weather-info" class="weather-content">
+                    <i class="fa-solid fa-location-dot bounce"></i> Localizando...
+                </div>
+            </section>
+
+            <section class="glass-card portals-card">
+                <h2><i class="fa-solid fa-link"></i> Accesos Rápidos</h2>
+                <div class="portal-grid">
+                    <a href="https://moodle.cdjuarez.tecnm.mx/login/index.php" target="_blank" class="glass-btn">
+                        <i class="fa-solid fa-book-open"></i><span>Moodle</span>
+                    </a>
+                    <a href="http://sii.cdjuarez.tecnm.mx/" target="_blank" class="glass-btn">
+                        <i class="fa-solid fa-server"></i><span>SII</span>
+                    </a>
+                    <a href="http://alumnos.cdjuarez.tecnm.mx/Login/Login?ReturnUrl=%2f" target="_blank" class="glass-btn">
+                        <i class="fa-solid fa-user-graduate"></i><span>Alumnos</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <button id="chat-fab" onclick="toggleChat()">
+        <i class="fa-solid fa-message"></i>
+    </button>
+
+    <div id="floating-chat-window" class="glass-card hidden">
+        <div class="chat-header">
+            <h3><i class="fa-solid fa-robot"></i> Asistente Liebre</h3>
+            <button class="close-chat" onclick="toggleChat()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="chat-box" class="custom-scrollbar">
+            <div class="message bot">¡Hola liebre! 🐇 ¿En qué te ayudo hoy?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Escribe aquí...">
+            <button onclick="sendMessage()" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
