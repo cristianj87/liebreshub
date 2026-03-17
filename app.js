@@ -21,7 +21,13 @@ function getWeather(lat, lon) {
         .then(data => {
             const temp = Math.round(data.main.temp);
             const desc = data.weather[0].description;
-            const city = data.name;
+            let city = data.name;
+
+// Filtro para corregir la geolocalización en la frontera
+const ciudadesFronterizas = ["San Elizario", "El Paso", "Socorro", "Sunland Park"];
+if (ciudadesFronterizas.some(frontera => city.includes(frontera))) {
+    city = "Ciudad Juárez";
+}
             
             // Lógica simple para cambiar el icono según el clima
             let iconCode = 'fa-cloud';
