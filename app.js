@@ -24,7 +24,7 @@ function getWeather(lat, lon) {
             let city = data.name;
 
 // Filtro para corregir la geolocalización en la frontera
-const ciudadesFronterizas = ["San Elizario", "El Paso", "Socorro", "Sunland Park"];
+const ciudadesFronterizas = ["San Elizario", "El Paso", "Manuel F. Martínez", "Socorro", "Sunland Park"];
 if (ciudadesFronterizas.some(frontera => city.includes(frontera))) {
     city = "Ciudad Juárez";
 }
